@@ -1,7 +1,7 @@
 import curses
 from curses import wrapper
 import time
-import requests
+import random
 
 def start_screen(stdscr):
     stdscr.clear()
@@ -21,8 +21,10 @@ def display_text(stdscr,target,current,wpm=0):
             stdscr.addstr(0,i,char,curses.color_pair(2))
     
 def wpm_test(stdscr):
-    req = requests.get("https://api.quotable.io/random")
-    target_text = req.json()["content"]
+    with open('sentences.txt', 'r') as file:
+        sentences = file.readlines()
+    random_sentence = random.choice(sentences)
+    target_text = random_sentence.strip()
     current_text = []
     wpm = 0
     start_time = time.time()
