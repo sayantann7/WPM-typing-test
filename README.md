@@ -1,4 +1,4 @@
-# WPM Typing Test - README
+# WPM Typing Test
 
 ## Overview
 This Python project is a simple terminal-based typing speed test. It measures your **Words Per Minute (WPM)** as you type a random quote. The program provides visual feedback for correct and incorrect keystrokes and gives you the opportunity to retake the test or exit at the end.
