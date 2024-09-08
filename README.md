@@ -1,66 +1,47 @@
 # WPM Typing Test
 
-## Overview
-This Python project is a simple terminal-based typing speed test. It measures your **Words Per Minute (WPM)** as you type a random quote. The program provides visual feedback for correct and incorrect keystrokes and gives you the opportunity to retake the test or exit at the end.
+This is a terminal-based Words Per Minute (WPM) typing test built using Python and the `curses` library. The game presents random sentences from a file, and the user types them out as quickly and accurately as possible. The WPM (Words Per Minute) is displayed in real-time, and the program handles errors and backspaces.
 
 ## Features
-- Displays a random quote fetched from an online API.
-- Measures typing speed in **Words Per Minute (WPM)**.
-- Provides feedback on correct (green) and incorrect (red) letters while typing.
-- Allows the user to restart the test or exit after completing a test.
-- Uses the `curses` library for a clean, interactive terminal interface.
+- **Random sentence selection**: Each test presents a random sentence from a `.txt` file.
+- **Real-time WPM calculation**: Your WPM is calculated in real-time as you type.
+- **Error highlighting**: Correct characters are shown in green, while incorrect characters are shown in red.
+- **Multiple runs**: After completing a test, the user can choose to play again or exit.
 
 ## Requirements
-To run this project, you need:
 - Python 3.x
-- `curses` module (built-in with most Python installations)
-- `requests` module (for fetching random quotes from an API)
+- The `curses` module (included in most Python installations)
 
-You can install the `requests` module using:
-```
-pip install requests
-```
+## Setup
 
-## How to Run
-1. Clone or download the project files.
-2. Install the required modules.
-3. Run the Python script using the command:
-   ```
-   python main.py
-   ```
-4. The game starts with a welcome screen. Press any key to begin the typing test.
+1. Clone or download the repository to your local machine.
+2. Create a `sentences.txt` file containing a list of sentences, with one sentence per line. For example:
+    ```
+    The quick brown fox jumps over the lazy dog.
+    A journey of a thousand miles begins with a single step.
+    ```
+3. Run the program using Python:
+
+    ```bash
+    python wpm_typing_test.py
+    ```
+
+## Usage
+
+- Upon running the script, you'll be greeted with a welcome screen.
+- Press any key to begin the typing test.
+- As you type, your WPM will be shown in the terminal.
+- Correctly typed characters will be displayed in green, and incorrect ones will be displayed in red.
+- Press `ESC` at any time to quit.
 
 ## Controls
-- **Typing**: Type the text shown on the screen.
-- **Backspace**: Correct mistakes by deleting the last typed character.
-- **ESC**: Press to exit the game at any time.
-- **Restart**: After completing the test, press any key to restart or press ESC to exit.
+- **Typing**: Start typing to match the given sentence.
+- **Backspace**: Press backspace to correct mistakes.
+- **Escape (ESC)**: Quit the game at any time.
+- **After Completion**: Press any key to play again, or `ESC` to exit.
 
-## How it Works
-1. **Start Screen**: The program displays a welcome message. Press any key to start the test.
-2. **Typing Test**: A random quote from the [Quotable API](https://api.quotable.io) is displayed. As you type, correct letters are shown in green, and incorrect ones are shown in red. The program calculates WPM dynamically based on your typing speed.
-3. **Completion**: Once you've typed the entire quote correctly, the game will show a completion message and give you the option to restart or exit.
+## Customization
 
-## Code Breakdown
-- **start_screen()**: Displays the welcome screen before starting the test.
-- **display_text()**: Renders the target text and highlights correct/incorrect letters as the user types. Also displays the current WPM.
-- **wpm_test()**: Main logic for the typing test. Handles text input, WPM calculation, and monitors when the test is completed.
-- **main()**: Initializes color pairs and handles the game loop, including starting the test, displaying the results, and restarting or exiting based on user input.
-
-## Example Output
-```
-Welcome to WPM Typing Test!
-Press any key to begin!
-```
-
-Once the test begins, it shows:
-```
-The quick brown fox jumps over the lazy dog.
-WPM = 65
-```
-
-Correctly typed characters will appear in green, and incorrect ones in red.
-
-## Notes
-- The program runs in the terminal using `curses`, so make sure to use a terminal environment that supports this library (Linux, macOS, or Windows Subsystem for Linux).
-- Make sure your terminal window is large enough to accommodate the display text.
+You can customize the following parts of the game:
+- **Sentences**: Edit the `sentences.txt` file to include your own sentences.
+- **Color Scheme**: Modify the `curses.init_pair()` values to change text colors.
