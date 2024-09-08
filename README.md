@@ -23,7 +23,7 @@ This is a terminal-based Words Per Minute (WPM) typing test built using Python a
 3. Run the program using Python:
 
     ```bash
-    python wpm_typing_test.py
+    python main.py
     ```
 
 ## Usage
